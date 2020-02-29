@@ -22,31 +22,39 @@ private fun scoreInput() {
 
 class Student(var name: String?, var math: Double, var english: Double) {
     fun print() {
+        /*
         println(
             name + "\t" + math + "\t" + english + "\t"
-                    + getAverage() +
-                    if (getAverage() >= 60) "PASSED" else "FAILED"
+                    + getAverage() + PassOrFail()
         )
+        println("\t"+grading())
+
+         */
+        println("$name\t$english\t$math\t${getAverage()}\t${PassOrFail()}\t${grading()}")
     }
 
-    fun getAverage(): Double {
-        return (english + math) / 2
+    fun grading() = when (getAverage()) {
+        in 90.0..100.0 -> 'A'
+        in 80.0..89.0 -> 'B'
+        in 70.0..79.0 -> 'C'
+        in 60.0..69.0 -> 'D'
+        else -> 'F'
     }
 
-    fun higherscore(): Double {
-        var max = if (english > math) {
-            println("english")
-            english
-        } else {
-            println("math")
-            math
-        }
-        return max
+
+    fun getAverage() = (english + math) / 2
+
+    fun PassOrFail() = if (getAverage() >= 60) "PASSED" else "FAILED"
+
+    fun higherscore() = if (english > math) {
+        println("english")
+        english
+    } else {
+        println("math")
+        math
     }
-    /*
-    fun namecheck() {
-        println(name?.length)
-    }
-     */
+
+    fun namecheck() = name?.length
+
 
 }

@@ -7,7 +7,7 @@ import static com.jung.student.Students.*;
 
 public class SchoolRunner {
     public static void main(String[] args) {
-        //scoreInput();
+        scoreInput();
 
         randomNum();
 
