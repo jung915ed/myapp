@@ -10,7 +10,11 @@ public class Ticket {
     public Ticket(int OneWayTickets, int RoundTripTickets) {
         this.OneWayTickets = OneWayTickets;
         this.RoundTripTickets = RoundTripTickets;
+    }
 
+
+    public void Sum() {
+        System.out.printf("you need to paid : "+(OneWay * OneWayTickets + discount * RoundTripTickets));
     }
 
     public void TotalSum() {
