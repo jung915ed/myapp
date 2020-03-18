@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
@@ -14,8 +15,17 @@ public class tester {
         //java8 new time method,
         // Instance with time zone, need parameter to assign time zone
         //java8time();
-
         //javatime();
+
+        LocalDateTime enter
+                = LocalDateTime.of(2020, 3, 18, 8, 0, 0);
+        LocalDateTime leave
+                = LocalDateTime.of(2020, 3, 18, 10, 0, 0);
+        CarParking car = new CarParking("AA-0001", enter);
+        car.setLeave(leave);
+        System.out.println(car.getDuration());
+        long hours = (long) Math.ceil(car.getDuration() / 60f);
+        System.out.println("fees are: " + hours * 30 + "dollars");
 
     }
 
