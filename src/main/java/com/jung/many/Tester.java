@@ -1,12 +1,35 @@
 package com.jung.many;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Tester {
     public static void main(String[] args) {
         //IntArryTest();
+        //ListAs();
+        //SetAs();
+        HashMap<String, String> stocks = new HashMap<>();
+        stocks.put("2330", "TSMC");
+        stocks.put("2317", "FOXCOM");
+        //provide key to retrieve value
+        System.out.println(stocks.get("2330"));
+        //using for loop to list values of keys
+        for (String k : stocks.keySet()) {
+            System.out.println(stocks.get(k));
+        }
+    }
+
+    public static void SetAs() {
+        HashSet<Integer> set = new HashSet<>();
+        set.add(6);
+        set.add(8);
+        set.add(9);
+        set.add(6);
+        for (int n : set) {
+            System.out.println(set);
+        }
+    }
+
+    public static void ListAs() {
         ArrayList<Integer> list = new ArrayList();
         list.add(5);
         list.add(1);

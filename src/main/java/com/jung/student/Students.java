@@ -8,6 +8,7 @@ public class Students {
     double math;
     double english;
     double average = (math + english) / 2;
+    static int pass = 60;
 
     public Students(String name, double math, double english) {
         this.name = name;
@@ -39,7 +40,7 @@ public class Students {
 
     public void print() {
         System.out.println(name + "\t" + math + "\t" + english + "\t" + getAverage()
-                + "\t" + ((getAverage() >= 60) ? "PASSED" : "FAILED"));
+                + "\t" + ((getAverage() >= pass) ? "PASSED" : "FAILED"));
         char grading = 'F';
         switch ((int) (average / 10)) {
             case 10:
@@ -97,6 +98,8 @@ public class Students {
 
 
     public static void scoreInput() {
+        //call kotlin method
+        Student.setPass(60);
 
         System.out.println("enter student's name: ");
         Scanner scan = new Scanner(System.in);
@@ -106,7 +109,7 @@ public class Students {
         System.out.println("enter math scores: ");
         double math = scan.nextDouble();
         //Students st = new Students("jack", 66, 77);
-        Students st = new Students(name,math,english);
+        Students st = new Students(name, math, english);
         st.print();
         System.out.println("highest score is: " + st.highscore());
     }

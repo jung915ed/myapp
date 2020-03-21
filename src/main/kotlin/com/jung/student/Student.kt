@@ -8,6 +8,7 @@ fun main(args: Array<String>) {
 }
 
 private fun scoreInput() {
+    Student.pass = 60
     val scanner = Scanner(System.`in`)
     print("enter stu's name: ")
     var name = scanner.next()
@@ -18,9 +19,16 @@ private fun scoreInput() {
     val st = Student(name, math, english)
     st.print()
     println("highest score is: ${st.higherscore()}")
+    //println("you are ${st.PassOrFail()}")
 }
 
 class Student(var name: String?, var math: Double, var english: Double) {
+    //java static type
+    companion object {
+        @JvmStatic
+        var pass = 60
+    }
+
     fun print() {
         /*
         println(
@@ -30,7 +38,7 @@ class Student(var name: String?, var math: Double, var english: Double) {
         println("\t"+grading())
 
          */
-        println("$name\t$english\t$math\t${getAverage()}\t${PassOrFail()}\t${grading()}")
+        println("$name\t$english\t$math\t${getAverage()}\t${PassOrFail()}\t${PassOrFail()}")
     }
 
     fun grading() = when (getAverage()) {
@@ -44,7 +52,7 @@ class Student(var name: String?, var math: Double, var english: Double) {
 
     fun getAverage() = (english + math) / 2
 
-    fun PassOrFail() = if (getAverage() >= 60) "PASSED" else "FAILED"
+    fun PassOrFail() = if (getAverage() >= pass) "PASSED" else "FAILED"
 
     fun higherscore() = if (english > math) {
         println("english")
