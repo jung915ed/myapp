@@ -8,11 +8,14 @@ import static com.jung.student.Students.*;
 public class SchoolRunner {
     public static void main(String[] args) {
 
-        scoreInput();
+        GradStudents gst = new GradStudents("jack", 60.0, 70.0, 80);
+        gst.print();
 
-        randomNum();
+        //scoreInput();
 
-        pickLotto();
+        //randomNum();
+
+        //pickLotto();
 
 
     }
