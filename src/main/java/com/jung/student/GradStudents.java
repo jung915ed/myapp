@@ -35,7 +35,7 @@ public class GradStudents extends Students {
                 grading = 'F';
 
         }
-        System.out.println("grading is: " + grading);
+        System.out.println("your grading is: " + grading);
     }
 
 

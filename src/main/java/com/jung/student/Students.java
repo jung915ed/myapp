@@ -2,6 +2,8 @@ package com.jung.student;
 
 import java.util.*;
 
+import static com.jung.student.GradStudents.grading;
+
 public class Students {
     String id;
     String name;
@@ -26,6 +28,29 @@ public class Students {
         return max;
     }
 
+    public static void grading(double v) {
+        char grading = 'F';
+        switch ((int) (v)) {
+            case 10:
+            case 9:
+                grading = 'A';
+                break;
+            case 8:
+                grading = 'B';
+                break;
+            case 7:
+                grading = 'C';
+                break;
+            case 6:
+                grading = 'D';
+                break;
+            default:
+                grading = 'F';
+
+        }
+        System.out.println("your grading is: " + grading);
+    }
+
     private double getMax() {
         double max;
         if (english > math) {
@@ -41,7 +66,7 @@ public class Students {
     public void print() {
         System.out.println(name + "\t" + math + "\t" + english + "\t" + getAverage()
                 + "\t" + ((getAverage() >= pass) ? "PASSED" : "FAILED"));
-        GradStudents.grading(average / 10);
+        grading(average / 10);
 
         /*
         if (getAverage() >= 60) {
