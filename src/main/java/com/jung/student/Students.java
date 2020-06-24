@@ -82,17 +82,27 @@ public class Students {
     }
 
     public static void pickLotto() {
-        ArrayList<String> numberList = new ArrayList<>();
-        ArrayList<Integer> list = new ArrayList<>();
-        for (int i = 1; i < 49; i++) {
-            list.add(i);
+        ArrayList<String> numberList1 = new ArrayList<>();
+        ArrayList<String> numberList2 = new ArrayList<>();
+        ArrayList<Integer> list1 = new ArrayList<>();
+        ArrayList<Integer> list2 = new ArrayList<>();
+        for (int i = 1; i < 39; i++) {
+            list1.add(i);
         }
-        Collections.shuffle(list);
-        for (int j = 0; j < 6; j++) {
+        for (int k = 1; k < 9; k++) {
+            list2.add(k);
+        }
+        Collections.shuffle(list1);
+        for (int j = 1; j <= 6; j++) {
             //System.out.print(list.get(j)+"\t");
-            numberList.add(String.valueOf(list.get(j)));
+            numberList1.add(String.valueOf(list1.get(j)));
         }
-        System.out.println("lotto number picked: " + numberList);
+        Collections.shuffle(list2);
+        for (int m = 1; m <= 1; m++) {
+            numberList2.add(String.valueOf(list2.get(m)));
+        }
+        System.out.println("lotto number picked: " + numberList1);
+        System.out.printf("lotto picked: " + numberList2);
     }
 
     public static void randomNum() {
